@@ -29,7 +29,7 @@ body {
     background-color: #576E60;
     color: #980907;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 10px 20px;
     text-shadow:
     3px 3px 0 #000,
     -3px 3px 0 #000,
@@ -76,7 +76,6 @@ body {
     background-color: #980907;
     color: #576E60;
     font-size: 30px;
-    margin-bottom: 10px;
     font-weight: bold;
     cursor: pointer;
     text-shadow:
@@ -147,9 +146,8 @@ body {
     background-color: #576E60;
     font-size: 25px;
     font-weight: bold;
-    padding: 5px;
+    padding: 15px;
     color: white;
-    padding: 10px;
 }
 
 .modal {
