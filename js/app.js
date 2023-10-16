@@ -12,12 +12,14 @@ let numberCells = 0;
 let arrayBombsUno = []; 
 //recuperare dal DOM la modale e il suo bottone
 const modalDomElement = document.querySelector(".modal")
-const btnCloseDomElement = document.getElementById('btnclose')
+const btnCloseDomElement = document.querySelector(".btn-close")
 
 //- aggiungere un addEventListener al bottone
 btnPlayDomElement.addEventListener("click", function () {
-  //    - svuotare eventualmente la griglia
+  //    - svuotare eventualmente la griglia e renderla cliccabile
     flexGridContainerDomElement.innerHTML = "";
+    flexGridContainerDomElement.classList.remove('stop-play')
+    modalDomElement.innerHTML = ''; 
   // azzerare il counter
     counter = 0;
     counterDomElement.innerHTML = '<span class="counter"></span>';
@@ -72,17 +74,19 @@ function onClickCell(event) {
     } else if(arrayBombsUno.includes(numberSingleCell)) {
         target.classList.add('bg-red')
         const modalContent = `
-        <h2 class="h2">HAI PERSO DOPO ${counter}mosse</h2> `
+        <h2 class="h2">HAI PERSO DOPO ${counter} mosse</h2> `
         modalDomElement.innerHTML += modalContent
         modalDomElement.classList.add('visible')
+        btnCloseDomElement.classList.add('visible')
         //ALTRIMENTI SE è nell'array di bombe aggiungere il bg rosso, fermare il gioco
     }
-
-    btnCloseDomElement.addEventListener("click", function(){
+    btnCloseDomElement.addEventListener('click', function (){
         modalDomElement.classList.remove('visible')
-        console.log(modalDomElement.classList)
-    })
+        btnCloseDomElement.classList.remove('visible')
+        flexGridContainerDomElement.classList.add('stop-play')
+        })
 }
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);

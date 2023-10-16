@@ -159,17 +159,24 @@ body {
     left: 300px;
     height: 900px;
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 999; 
     font-size: 50px;
     display: none;
+}
+
+.btn-close-wrapper {
+    position: relative;
 }
 
 .btn-close {
     background-color: #000;
     color: #BFD8DF;
-    display: inline-block;
     font-size: 50px;
     padding: 20px;
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    display: none;
+    z-index: 999;
 }
 
 /*UTILITY CLASSES*/
@@ -187,5 +194,9 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.stop-play {
+    pointer-events: none;
 }
 
