@@ -13,6 +13,7 @@ body {
     height: 100vh;
     overflow: hidden;
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
 /*HEADER*/
@@ -53,11 +54,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px; 
 }
 
 .label-levels {
     font-size: 25px; 
     margin-right: 5px;
+    font-weight: bold;
 }
 
 .select {
@@ -159,6 +162,10 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 50px;
     display: none;
+}
+
+.h2 {
+    text-align: center;
 }
 
 .btn-close-wrapper {
