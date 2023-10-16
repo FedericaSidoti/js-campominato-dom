@@ -79,6 +79,8 @@ function onClickCell(event) {
         modalDomElement.classList.add('visible')
         btnCloseDomElement.classList.add('visible')
         //ALTRIMENTI SE è nell'array di bombe aggiungere il bg rosso, fermare il gioco
+    } else if ((numberCells - 16) == arrayBombsUno.length) {
+        alert('HAI VINTO')
     }
     btnCloseDomElement.addEventListener('click', function (){
         modalDomElement.classList.remove('visible')
