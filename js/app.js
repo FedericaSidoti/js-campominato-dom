@@ -30,6 +30,8 @@ btnPlayDomElement.addEventListener('click', function() {
         flexGridContainerDomElement.innerHTML += cellDomElement 
         
     }
+    const arrayBombsUno = getSomeBombs(1, numberCells, 16)
+    console.log (arrayBombsUno)
 //    - aggiungere l' eventlistener alla casella stampata con parametri click, ONCLICKCELL
     const cellDomElementNodes = document.querySelectorAll('.flex-grid-item') 
 
@@ -46,7 +48,6 @@ btnPlayDomElement.addEventListener('click', function() {
         } else {
             currentCell.classList.add('easy-level')
         }
-
     }  
 
 })
@@ -65,7 +66,24 @@ function onClickCell () {
     counterDomElement.innerHTML = numberCounterDomElement
     }
     //ALTRIMENTI SE è nell'array di bombe aggiungere il bg rosso, fermare il gioco
-
 }
 
+function getRandomInt(min, max) {
+	min = Math.ceil(min)
+	max = Math.floor(max)
+	return Math.floor(Math.random() * (max - min + 1) + min) // The maximum is inclusive and the minimum is inclusive
+}
+
+function getSomeBombs(minRange, maxRange, bombsNumber) {
+    const arrayBombs = [] ;
+
+    while(arrayBombs.length < bombsNumber) {
+        const nBomb = getRandomInt(minRange, maxRange)
+        if(!arrayBombs.includes(nBomb)) {
+            arrayBombs.push(nBomb)
+        }
+
+        return arrayBombs
+    }
+}
 
