@@ -71,6 +71,9 @@ function onClickCell(event) {
         const numberCounterDomElement = `
         <span class="counter">${counter}</span> `;
         counterDomElement.innerHTML = numberCounterDomElement;
+        if (counter === (numberCells - 16)) {
+            alert('HAI VINTO! Hai scoperto tutt le caselle senza bombe!')
+        }
     } else if(arrayBombsUno.includes(numberSingleCell)) {
         target.classList.add('bg-red')
         const modalContent = `
@@ -79,9 +82,7 @@ function onClickCell(event) {
         modalDomElement.classList.add('visible')
         btnCloseDomElement.classList.add('visible')
         //ALTRIMENTI SE è nell'array di bombe aggiungere il bg rosso, fermare il gioco
-    } else if ((numberCells - 16) == arrayBombsUno.length) {
-        alert('HAI VINTO')
-    }
+    } 
     btnCloseDomElement.addEventListener('click', function (){
         modalDomElement.classList.remove('visible')
         btnCloseDomElement.classList.remove('visible')
